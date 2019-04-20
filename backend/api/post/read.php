@@ -46,4 +46,4 @@
     );
   }
 
-  // get: http://localhost/PHP-REST-API/api/post/read.php
+  // get: http://localhost/PHP-REST-API/backend/api/post/read.php
