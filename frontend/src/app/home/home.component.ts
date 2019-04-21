@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +8,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  url = 'http://localhost/PHP-REST-API/backend/api/post/read.php';
   response: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
-    let obs = this.http.get(this.url);
+    let obs = this.data.getPosts();
     obs.subscribe((res) => {
       this.response = res;
-      console.log(this.response.data);
+      console.log(this.response);
     });
   }
 
