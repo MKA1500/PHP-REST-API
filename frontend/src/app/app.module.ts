@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { DataService } from './shared/data.service';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AdminHeaderComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
