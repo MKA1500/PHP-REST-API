@@ -20,5 +20,9 @@
     'body' => $post->body,
     'author' => $post->author,
     'category_id' => $post->category_id,
-    'category_name' => $post->category_name,
+    'category_name' => $post->category_name
   );
+
+  print_r(json_encode($post_arr));
+
+  // get: http://localhost/PHP-REST-API/backend/api/post/read_single.php?id=3
