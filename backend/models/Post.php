@@ -7,6 +7,8 @@
     public $category_id;
     public $category_name;
     public $title;
+    public $lead;
+    public $image;
     public $body;
     public $author;
     public $created_at;
@@ -21,7 +23,8 @@
         p.id,
         p.category_id,
         p.title,
-        p.body,
+        p.lead,
+        p.image,
         p.author,
         p.created_at
       FROM
