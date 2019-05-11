@@ -6,9 +6,13 @@
       *ngFor="let res of response.data; let i = index"
       class="col-md-6">
       <h3>{{ res.title }}</h3>
+      <img
+        [src]="res.image"
+        alt="{{ res.title }}"
+        class="img-fluid" />
       <p class="badge">{{ res.category_name }}</p>
       <em>{{ res.author }}</em>
-      <div>{{ res.body }}</div>
+      <div>{{ res.lead }}</div>
     </div>
   </div>
 </div>

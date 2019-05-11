@@ -29,7 +29,9 @@
       $post_item = array(
         'id' => $id,
         'title' => $title,
-        'body' => html_entity_decode($body),
+        'lead' => $lead,
+        'image' => $image,
+        // 'body' => html_entity_decode($body),
         'author' => $author,
         'category_id' => $category_id,
         'category_name' => $category_name

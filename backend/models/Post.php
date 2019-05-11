@@ -50,6 +50,8 @@
         p.id,
         p.category_id,
         p.title,
+        p.lead,
+        p.image,
         p.body,
         p.author,
         p.created_at
@@ -81,6 +83,8 @@
           $this->table . '
         SET
           title = :title,
+          lead = :lead,
+          image = :image,
           body = :body,
           author = :author,
           category_id = :category_id';
@@ -89,12 +93,16 @@
 
       // clean up data - no html:
       $this->title = htmlspecialchars(strip_tags($this->title));
+      $this->lead = htmlspecialchars(strip_tags($this->lead));
+      $this->image = htmlspecialchars(strip_tags($this->image));
       $this->body = htmlspecialchars(strip_tags($this->body));
       $this->author = htmlspecialchars(strip_tags($this->title));
       $this->category_id = htmlspecialchars(strip_tags($this->category_id));
 
       // bind data:
       $stmt->bindParam(':title', $this->title);
+      $stmt->bindParam(':lead', $this->lead);
+      $stmt->bindParam(':image', $this->image);
       $stmt->bindParam(':body', $this->body);
       $stmt->bindParam(':author', $this->author);
       $stmt->bindParam(':category_id', $this->category_id);
