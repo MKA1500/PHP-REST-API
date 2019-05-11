@@ -9,13 +9,21 @@ import { HomeComponent } from './home/home.component';
 import { DataService } from './shared/data.service';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminComponent } from './admin/admin.component';
+import { SingleComponent } from './home/single/single.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { PostsComponent } from './admin/posts/posts.component';
+import { HomeHeaderComponent } from './home/home-header/home-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdminHeaderComponent,
-    AdminComponent
+    AdminComponent,
+    SingleComponent,
+    SidebarComponent,
+    PostsComponent,
+    HomeHeaderComponent
   ],
   imports: [
     BrowserModule,
