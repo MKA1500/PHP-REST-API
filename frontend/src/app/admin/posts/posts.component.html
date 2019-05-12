@@ -1,3 +1,26 @@
-<p>
-  posts works!
-</p>
+<div class="table">
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+      <mat-cell *matCellDef="let post">{{ post.image }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+      <mat-cell *matCellDef="let post">{{ post.title }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="category_name">
+      <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
+      <mat-cell *matCellDef="let post">{{ post.category_name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="author">
+      <mat-header-cell *matHeaderCellDef>Author</mat-header-cell>
+      <mat-cell *matCellDef="let post">{{ post.author }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lead">
+      <mat-header-cell *matHeaderCellDef>Lead</mat-header-cell>
+      <mat-cell *matCellDef="let post">{{ post.lead }}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
