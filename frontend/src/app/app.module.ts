@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './shared/data.service';
@@ -14,8 +14,8 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminComponent } from './admin/admin.component';
 import { SingleComponent } from './home/single/single.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
-import { PostsComponent } from './admin/posts/posts.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
+import { PostsTableComponent } from './admin/posts-table/posts-table.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { HomeHeaderComponent } from './home/home-header/home-header.component';
     AdminComponent,
     SingleComponent,
     SidebarComponent,
-    PostsComponent,
-    HomeHeaderComponent
+    HomeHeaderComponent,
+    PostsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,9 @@ import { HomeHeaderComponent } from './home/home-header/home-header.component';
     HttpClientModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
