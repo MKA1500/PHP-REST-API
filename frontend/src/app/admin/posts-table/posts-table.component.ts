@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { OnInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { PostsTableDataSource } from './posts-table-datasource';
 
@@ -7,15 +7,16 @@ import { PostsTableDataSource } from './posts-table-datasource';
   templateUrl: './posts-table.component.html',
   styleUrls: ['./posts-table.component.css']
 })
-export class PostsTableComponent implements AfterViewInit {
+export class PostsTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: PostsTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'amount'];
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.dataSource = new PostsTableDataSource(this.paginator, this.sort);
+    console.log(this.dataSource);
   }
 }

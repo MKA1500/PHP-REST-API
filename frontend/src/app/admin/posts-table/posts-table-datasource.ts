@@ -7,25 +7,25 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export interface PostsTableItem {
   name: string;
   id: number;
+  amount: number;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: PostsTableItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
+  {id: 1, name: 'Hydrogen', amount: 323 },
+  {id: 2, name: 'Helium', amount: 99 },
+  {id: 3, name: 'Lithium', amount: 223 },
+  {id: 4, name: 'Beryllium', amount: 123 },
+  {id: 5, name: 'Boron', amount: 666 },
+  {id: 6, name: 'Carbon', amount: 123 },
+  {id: 7, name: 'Nitrogen', amount: 123 },
+  {id: 8, name: 'Oxygen', amount: 567 },
+  {id: 9, name: 'Fluorine', amount: 123 },
+  {id: 10, name: 'Neon', amount: 123 },
+  {id: 11, name: 'Nitrogen 2', amount: 423 },
+  {id: 12, name: 'Oxygen 2', amount: 167 },
+  {id: 13, name: 'Fluorine 2', amount: 23 },
+  {id: 14, name: 'Neon 2', amount: 223 },
 ];
 
 /**
@@ -56,6 +56,7 @@ export class PostsTableDataSource extends DataSource<PostsTableItem> {
 
     // Set the paginator's length
     this.paginator.length = this.data.length;
+    console.log(this.data.length);
 
     return merge(...dataMutations).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
@@ -91,6 +92,7 @@ export class PostsTableDataSource extends DataSource<PostsTableItem> {
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'amount': return compare(+a.amount, +b.amount, isAsc);
         default: return 0;
       }
     });
