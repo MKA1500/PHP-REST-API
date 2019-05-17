@@ -3,14 +3,23 @@ import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
+// import { DataService } from '../../shared/data.service';
+// import { PostsForTableUnit } from '../../shared/postsForTableUnit.model';
+// import { PostsImporter } from '../../shared/postsImporter.model';
+
 // TODO: Replace this with your own data model type
 export interface PostsTableItem {
   name: string;
   id: number;
   amount: number;
 }
+// let postsForTableUnitData: PostsForTableUnit;
+// let dataServiceData: DataService;
+// let postsImporter = new PostsImporter(postsForTableUnitData, dataServiceData);
+// let POSTS_IMPORTED = postsImporter.importPosts();
+//
+// console.log('POSTS_IMPORTED', POSTS_IMPORTED);
 
-// TODO: replace this with real data from your application
 const EXAMPLE_DATA: PostsTableItem[] = [
   {id: 1, name: 'Hydrogen', amount: 323 },
   {id: 2, name: 'Helium', amount: 99 },
