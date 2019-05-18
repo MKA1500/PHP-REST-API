@@ -19,4 +19,8 @@ export class PostsTableComponent implements OnInit {
     this.dataSource = new PostsTableDataSource(this.paginator, this.sort);
     console.log(this.dataSource);
   }
+
+  onRowClicked(row) {
+    console.log('Row clicked: ', row);
+  }
 }

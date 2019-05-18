@@ -4,3 +4,7 @@
 .posts-data-table {
   padding-top: 35px;
 }
+.name-cell {
+  cursor: pointer;
+  font-weight: 600;
+}
