@@ -3,38 +3,44 @@ import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
-// import { DataService } from '../../shared/data.service';
-// import { PostsForTableUnit } from '../../shared/postsForTableUnit.model';
-// import { PostsImporter } from '../../shared/postsImporter.model';
-
-// TODO: Replace this with your own data model type
 export interface PostsTableItem {
-  name: string;
-  id: number;
-  amount: number;
+  id: string;
+  title: string;
+  lead: string;
+  image: string;
+  author: string;
+  category_id: string;
+  category_name: string;
 }
-// let postsForTableUnitData: PostsForTableUnit;
-// let dataServiceData: DataService;
-// let postsImporter = new PostsImporter(postsForTableUnitData, dataServiceData);
-// let POSTS_IMPORTED = postsImporter.importPosts();
-//
-// console.log('POSTS_IMPORTED', POSTS_IMPORTED);
 
 const EXAMPLE_DATA: PostsTableItem[] = [
-  {id: 1, name: 'Hydrogen', amount: 323 },
-  {id: 2, name: 'Helium', amount: 99 },
-  {id: 3, name: 'Lithium', amount: 223 },
-  {id: 4, name: 'Beryllium', amount: 123 },
-  {id: 5, name: 'Boron', amount: 666 },
-  {id: 6, name: 'Carbon', amount: 123 },
-  {id: 7, name: 'Nitrogen', amount: 123 },
-  {id: 8, name: 'Oxygen', amount: 567 },
-  {id: 9, name: 'Fluorine', amount: 123 },
-  {id: 10, name: 'Neon', amount: 123 },
-  {id: 11, name: 'Nitrogen 2', amount: 423 },
-  {id: 12, name: 'Oxygen 2', amount: 167 },
-  {id: 13, name: 'Fluorine 2', amount: 23 },
-  {id: 14, name: 'Neon 2', amount: 223 },
+  {
+    id: "1",
+    title: "Excepteur sint occaecat",
+    lead: " Excepteur adipiscing elit",
+    image: "Swietoslawska.jpg",
+    author: "John Doe",
+    category_id: "1",
+    category_name: "Technology"
+  },
+  {
+    id: "2",
+    title: "Technology Post Two",
+    lead: "Adipiscing elit Adipiscing elit Adipiscing elit Adipiscing elit Adipiscing elit",
+    image: "Swietoslawska.jpg",
+    author: "Sam Smith",
+    category_id: "1",
+    category_name: "Technology"
+  },
+  {
+    id: "3",
+    title: "Post 3",
+    lead: "3 Adipiscing elit",
+    image: "Swietoslawska.jpg",
+    author: "Swietoslw Smith",
+    category_id: "1",
+    category_name: "Tech"
+  },
 ];
 
 /**
@@ -99,9 +105,13 @@ export class PostsTableDataSource extends DataSource<PostsTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'amount': return compare(+a.amount, +b.amount, isAsc);
+        case 'title': return compare(a.title, b.title, isAsc);
+        case 'lead': return compare(a.lead, b.lead, isAsc);
+        case 'image': return compare(a.image, b.image, isAsc);
+        case 'author': return compare(a.author, b.author, isAsc);
+        case 'category_id': return compare(a.category_id, b.category_id, isAsc);
+        case 'category_name': return compare(+a.category_name, +b.category_name, isAsc);
         default: return 0;
       }
     });

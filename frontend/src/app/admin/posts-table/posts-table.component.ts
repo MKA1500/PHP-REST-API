@@ -1,6 +1,7 @@
 import { OnInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { PostsTableDataSource } from './posts-table-datasource';
+import { DataService } from '../../shared/data.service';
 
 @Component({
   selector: 'app-posts-table',
@@ -11,13 +12,20 @@ export class PostsTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: PostsTableDataSource;
+  response: any;
+  displayedColumns = ['id', 'title', 'lead', 'image', 'author', 'category_id', 'category_name'];
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'amount'];
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    let obs = this.data.getPosts();
+    obs.subscribe((res) => {
+      this.response = res;
+      console.log('ADMIN RESPONSE:', this.response.data);
+    });
+
     this.dataSource = new PostsTableDataSource(this.paginator, this.sort);
-    console.log(this.dataSource);
+    console.log('ADMIN DATA SOURCE', this.dataSource);
   }
 
   onRowClicked(row) {
