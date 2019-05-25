@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DataService } from './shared/data.service';
+import { DataService } from './services/data.service';
+import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,7 @@ import { SingleComponent } from './home/single/single.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { PostsTableComponent } from './admin/posts-table/posts-table.component';
+import { UserTableComponent } from './admin/user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PostsTableComponent } from './admin/posts-table/posts-table.component';
     SingleComponent,
     SidebarComponent,
     HomeHeaderComponent,
-    PostsTableComponent
+    PostsTableComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { PostsTableComponent } from './admin/posts-table/posts-table.component';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [DataService],
+  providers: [DataService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { OnInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { PostsTableDataSource } from './posts-table-datasource';
-import { DataService } from '../../shared/data.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-posts-table',

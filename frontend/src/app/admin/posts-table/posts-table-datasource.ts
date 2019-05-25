@@ -26,7 +26,7 @@ const EXAMPLE_DATA: PostsTableItem[] = [
   {
     id: "2",
     title: "Technology Post Two",
-    lead: "Adipiscing elit Adipiscing elit Adipiscing elit Adipiscing elit Adipiscing elit",
+    lead: "Adipiscing elit Adipiscing elit Adipiscing elit",
     image: "Swietoslawska.jpg",
     author: "Sam Smith",
     category_id: "1",
