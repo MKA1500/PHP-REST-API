@@ -17,7 +17,7 @@ import { SingleComponent } from './home/single/single.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { PostsTableComponent } from './admin/posts-table/posts-table.component';
-import { UserTableComponent } from './admin/user-table/user-table.component';
+import { PostsTable2Component } from './admin/posts-table-2/posts-table-2.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { UserTableComponent } from './admin/user-table/user-table.component';
     SidebarComponent,
     HomeHeaderComponent,
     PostsTableComponent,
-    UserTableComponent
+    PostsTable2Component
   ],
   imports: [
     BrowserModule,

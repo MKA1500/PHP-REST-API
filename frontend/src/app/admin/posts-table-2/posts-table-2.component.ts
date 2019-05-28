@@ -6,10 +6,10 @@ import { User } from '../../models/user.model';
 
 @Component({
   selector: 'user-table',
-  templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.css']
+  templateUrl: './posts-table-2.component.html',
+  styleUrls: ['./posts-table-2.component.css']
 })
-export class UserTableComponent implements OnInit {
+export class PostsTable2Component implements OnInit {
 
   dataSource = new UserDataSource(this.userService);
   displayedColumns = ['name', 'email', 'phone', 'company'];
