@@ -7,7 +7,7 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
 
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './services/data.service';
-import { UserService } from './services/user.service';
+import { PostsService } from './services/posts.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -41,7 +41,7 @@ import { PostsTable2Component } from './admin/posts-table-2/posts-table-2.compon
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [DataService, UserService],
+  providers: [DataService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
