@@ -2,16 +2,8 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { PostsTableItem } from '../../models/postsTableItem.model';
 
-export interface PostsTableItem {
-  id: string;
-  title: string;
-  lead: string;
-  image: string;
-  author: string;
-  category_id: string;
-  category_name: string;
-}
 
 const EXAMPLE_DATA: PostsTableItem[] = [
   {
