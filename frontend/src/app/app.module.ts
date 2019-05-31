@@ -7,7 +7,7 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
 
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './services/data.service';
-import { PostsService } from './services/posts.service';
+import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,7 +17,8 @@ import { SingleComponent } from './home/single/single.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { PostsTableComponent } from './admin/posts-table/posts-table.component';
-import { PostsTable2Component } from './admin/posts-table-2/posts-table-2.component';
+import { UserTableComponent } from './admin/user-table/user-table.component';
+import { PostsAdminTableComponent } from './admin/posts-admin-table/posts-admin-table.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PostsTable2Component } from './admin/posts-table-2/posts-table-2.compon
     SidebarComponent,
     HomeHeaderComponent,
     PostsTableComponent,
-    PostsTable2Component
+    UserTableComponent,
+    PostsAdminTableComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { PostsTable2Component } from './admin/posts-table-2/posts-table-2.compon
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [DataService, PostsService],
+  providers: [DataService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
