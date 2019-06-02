@@ -9,8 +9,8 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./posts-table.component.css']
 })
 export class PostsTableComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   dataSource: PostsTableDataSource;
   response: any;
   displayedColumns = ['id', 'title', 'lead', 'image', 'author', 'category_id', 'category_name'];
@@ -18,14 +18,16 @@ export class PostsTableComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.dataSource = new PostsTableDataSource(this.paginator, this.sort);
+    console.log('ADMIN DATA SOURCE', this.dataSource);
+
     let obs = this.data.getPosts();
     obs.subscribe((res) => {
       this.response = res;
       console.log('ADMIN RESPONSE:', this.response.data);
+      this.dataSource.data = [...this.response.data];
+      console.log('this.dataSource.data', this.dataSource.data);
     });
-
-    this.dataSource = new PostsTableDataSource(this.paginator, this.sort);
-    console.log('ADMIN DATA SOURCE', this.dataSource);
   }
 
   onRowClicked(row) {

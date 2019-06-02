@@ -8,7 +8,7 @@ import { PostsTableItem } from '../../models/postsTableItem.model';
 const EXAMPLE_DATA: PostsTableItem[] = [
   {
     id: "1",
-    title: "Excepteur sint occaecat",
+    title: "1 Excepteur sint occaecat",
     lead: " Excepteur adipiscing elit",
     image: "Swietoslawska.jpg",
     author: "John Doe",
