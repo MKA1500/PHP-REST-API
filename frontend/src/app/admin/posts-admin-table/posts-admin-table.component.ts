@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { DataService } from '../../services/data.service';
 import { Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
-import { User } from '../../models/user.model';
+import { PostsTableItem } from '../../models/postsTableItem.model';
 
 @Component({
   selector: 'posts-admin-table',
@@ -11,23 +11,26 @@ import { User } from '../../models/user.model';
 })
 export class PostsAdminTableComponent implements OnInit {
 
-  dataSource = new UserDataSource(this.userService);
-  displayedColumns = ['name', 'email', 'phone', 'company'];
+  dataSource = new UserDataSource(this.dataService);
+  displayedColumns = ['id', 'title', 'lead', 'image', 'author', 'category_id', 'category_name'];
 
-  constructor(private userService: UserService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    console.log(this.dataSource);
   }
 
 }
 
 export class UserDataSource extends DataSource<any> {
-  constructor(private userService: UserService) {
+  constructor(private dataService: DataService) {
     super();
   }
 
-  connect(): Observable<User[]> {
-    return this.userService.getUser();
+  connect(): Observable<PostsTableItem[]> {
+    var dataOne = this.dataService.getPostsForTable();
+    console.log('dataOne', dataOne);
+    return this.dataService.getPostsForTable()
   }
 
   disconnect() {}

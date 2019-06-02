@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    let obs = this.data.getPosts();
+    let obs = this.data.getPostsNoObservable();
     obs.subscribe((res) => {
       this.response = res;
       console.log(this.response);

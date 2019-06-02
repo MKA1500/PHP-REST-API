@@ -21,7 +21,7 @@ export class PostsTableComponent implements OnInit {
     this.dataSource = new PostsTableDataSource(this.paginator, this.sort);
     console.log('ADMIN DATA SOURCE', this.dataSource);
 
-    let obs = this.data.getPosts();
+    let obs = this.data.getPostsNoObservable();
     obs.subscribe((res) => {
       this.response = res;
       console.log('ADMIN RESPONSE:', this.response.data);
