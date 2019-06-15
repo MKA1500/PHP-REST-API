@@ -1,0 +1,9 @@
+.table {
+  font-size: .875rem;
+}
+.table thead th {
+  border-bottom: none;
+}
+.lead-col {
+  max-width: 260px;
+}
