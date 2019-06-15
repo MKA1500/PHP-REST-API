@@ -1,0 +1,21 @@
+.admin-header {
+  background: #333;
+}
+.admin-header ul {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.admin-header ul li {
+  display: inline-block!important;
+}
+.admin-header .nav-link {
+  padding: 0 1rem;
+}
+.admin-header .nav-link,
+.admin-header .nav-link:hover,
+.admin-header .nav-link:visited,
+.admin-header .nav-link:active {
+    color: #FFF;
+}
