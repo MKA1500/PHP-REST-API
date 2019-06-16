@@ -4,7 +4,7 @@
       <th>Title</th>
       <th>Author</th>
       <th>Category</th>
-      <th class="lead-col">Lead</th>
+      <th>Date</th>
       <th></th>
     </tr>
   </thead>
@@ -13,12 +13,17 @@
       <th>{{ article.title }}</th>
       <td>{{ article.author }}</td>
       <td>{{ article.category_name }}</td>
-      <td class="lead-col">{{ article.lead }}</td>
+      <td>{{ article.created_at }}</td>
       <td>
         <button class="btn btn-primary mr-1">Edit</button>
-        <button class="btn btn-success mr-1">Publish</button>
-        <button class="btn btn-warning mr-1">Unpublish</button>
+        <button
+          *ngIf="article.published == 0"
+          class="btn btn-success mr-1">Publish</button>
+        <button
+          *ngIf="article.published == 1" 
+          class="btn btn-warning mr-1">Unpublish</button>
         <button class="btn btn-danger">Delete</button>
+        {{ article.published }}
       </td>
     </tr>
   </tbody>

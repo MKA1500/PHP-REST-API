@@ -34,7 +34,9 @@
         // 'body' => html_entity_decode($body),
         'author' => $author,
         'category_id' => $category_id,
-        'category_name' => $category_name
+        'category_name' => $category_name,
+        'created_at' => $created_at,
+        'published' => $published
       );
 
       array_push($posts_arr['data'], $post_item);

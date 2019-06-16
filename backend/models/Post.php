@@ -12,6 +12,7 @@
     public $body;
     public $author;
     public $created_at;
+    public $published;
 
     public function __construct($db) {
       $this->conn = $db;
@@ -26,7 +27,8 @@
         p.lead,
         p.image,
         p.author,
-        p.created_at
+        p.created_at,
+        p.published
       FROM
         ' . $this->table . ' p
         LEFT JOIN
@@ -55,6 +57,7 @@
         p.body,
         p.author,
         p.created_at
+        p.published
       FROM
         ' . $this->table . ' p
         LEFT JOIN
@@ -74,6 +77,8 @@
       $this->author = $row['author'];
       $this->category_id = $row['categort_id'];
       $this->category_name = $row['category_name'];
+      $this->created_at = $row['created_at'];
+      $this->published = $row['published'];
     }
 
     // Create single post:
@@ -87,7 +92,9 @@
           image = :image,
           body = :body,
           author = :author,
-          category_id = :category_id';
+          category_id = :category_id,
+          created_at = :created_at,
+          published = :published';
       // statement:
       $stmt = $this->conn->prepare($query);
 

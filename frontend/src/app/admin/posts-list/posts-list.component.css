@@ -4,6 +4,14 @@
 .table thead th {
   border-bottom: none;
 }
+.table td,
+.table th {
+  vertical-align: middle;
+}
 .lead-col {
   max-width: 260px;
+}
+.btn-warning,
+.btn-success {
+  min-width: 98px;
 }

@@ -22,6 +22,8 @@
   $post->body = $data->body;
   $post->author = $data->author;
   $post->category_id = $data->category_id;
+  $post->created_at = $data->created_at;
+  $post->published = $data->published;
 
   // reate the post:
   if ($post->create()) {
