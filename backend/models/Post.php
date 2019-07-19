@@ -24,6 +24,7 @@
         p.id,
         p.category_id,
         p.title,
+        p.body,
         p.lead,
         p.image,
         p.author,
