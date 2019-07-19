@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     let obs = this.data.getPosts();
     obs.subscribe((res) => {
       this.response = res;
-      console.log(this.response);
+      console.log('home response: ', this.response);
     });
   }
 

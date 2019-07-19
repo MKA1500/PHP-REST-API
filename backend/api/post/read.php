@@ -29,14 +29,10 @@
       $post_item = array(
         'id' => $id,
         'title' => $title,
-        'lead' => $lead,
-        'image' => $image,
-        // 'body' => html_entity_decode($body),
+        'body' => html_entity_decode($body),
         'author' => $author,
         'category_id' => $category_id,
-        'category_name' => $category_name,
-        'created_at' => $created_at,
-        'published' => $published
+        'category_name' => $category_name
       );
 
       array_push($posts_arr['data'], $post_item);

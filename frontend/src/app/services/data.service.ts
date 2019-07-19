@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private postsForTableUrl = 'http://localhost/PHP-REST-API/backend/api/post/read.php';
+  private url = 'http://localhost/PHP-REST-API/backend/api/post/read.php';
 
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get(this.postsForTableUrl);
+    return this.http.get(this.url);
   }
 }
