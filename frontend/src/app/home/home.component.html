@@ -6,7 +6,9 @@
     <div
       *ngFor="let res of response.data; let i = index"
       class="col-md-6 post-index-container">
-      <a class="post-link">
+      <a
+        class="post-link"
+        [routerLink]="['/post', res.id, res.title]">
         <h3>{{ res.title }}</h3>
         <div class="img-container">
           <img

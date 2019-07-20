@@ -6,7 +6,8 @@
       <a
         class="btn btn-danger edit-post"
         href="#"
-        [routerLink]="['/edit-post', 5, 'edit']">
+        [routerLink]="['/edit-post', 5, 'edit']"
+        [queryParams]="{allowEdit: true}">
         Edit
       </a>
     </div>
@@ -22,7 +23,10 @@
   </div>
   <div class="related-posts">
     <a
-      class="btn btn-warning"
+      class="btn btn-primary"
+      routerLink="/">Back</a>
+    <a
+      class="btn btn-warning ml-2"
       [routerLink]="['/post', 22, 'An another article']">An another article</a>
   </div>
 </div>
