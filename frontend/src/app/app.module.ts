@@ -13,6 +13,7 @@ import { AdminComponent } from './admin/admin.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { PostsListComponent } from './admin/posts-list/posts-list.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
+import { HomeFooterComponent } from './home/home-footer/home-footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeHeaderComponent } from './home/home-header/home-header.component';
     AdminComponent,
     SidebarComponent,
     PostsListComponent,
-    HomeHeaderComponent
+    HomeHeaderComponent,
+    HomeFooterComponent
   ],
   imports: [
     BrowserModule,
