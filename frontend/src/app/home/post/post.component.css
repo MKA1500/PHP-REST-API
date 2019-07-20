@@ -1,3 +1,19 @@
+.post-heading-top {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
+.post-heading-top h2 {
+  flex: 1;
+  padding-right: 1rem;
+}
+.btn.btn-danger {
+  color: #FFF;
+}
+.btn.btn-danger:hover {
+  cursor: pointer;
+  color: #FFF;
+}
 .post-img-wrap {
   position: relative;
   width: 100%;
@@ -16,4 +32,7 @@
 }
 .post-lead {
   margin-bottom: 1rem;
+}
+.related-posts {
+  padding-top: 2rem;
 }

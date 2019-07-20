@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './services/data.service';
@@ -15,6 +14,7 @@ import { PostsListComponent } from './admin/posts-list/posts-list.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { HomeFooterComponent } from './home/home-footer/home-footer.component';
 import { PostComponent } from './home/post/post.component';
+import { EditPostComponent } from './admin/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +26,13 @@ import { PostComponent } from './home/post/post.component';
     PostsListComponent,
     HomeHeaderComponent,
     HomeFooterComponent,
-    PostComponent
+    PostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    AngularFontAwesomeModule
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

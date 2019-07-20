@@ -6,16 +6,18 @@
     <div
       *ngFor="let res of response.data; let i = index"
       class="col-md-6 post-index-container">
-      <h3>{{ res.title }}</h3>
-      <div class="img-container">
-        <img
-          [src]="res.image"
-          alt="{{ res.title }}"
-          class="img-fluid posts-index-image" />
-      </div>
-      <p class="badge">{{ res.category_name }}</p>
-      <em>{{ res.author }}</em>
-      <div>{{ res.lead }}</div>
+      <a class="post-link">
+        <h3>{{ res.title }}</h3>
+        <div class="img-container">
+          <img
+            [src]="res.image"
+            alt="{{ res.title }}"
+            class="img-fluid posts-index-image" />
+        </div>
+        <p class="badge">{{ res.category_name }}</p>
+        <em>{{ res.author }}</em>
+        <div>{{ res.lead }}</div>
+      </a>
     </div>
   </div>
 </div>

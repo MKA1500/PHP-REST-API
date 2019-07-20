@@ -1,7 +1,15 @@
 <app-home-header></app-home-header>
 <div class="container post-container">
   <div class="post-heading">
-    <h2>{{ post.id }}: {{ post.title }}</h2>
+    <div class="post-heading-top">
+      <h2>{{ post.id }}: {{ post.title }}</h2>
+      <a
+        class="btn btn-danger edit-post"
+        href="#"
+        [routerLink]="['/edit-post', 5, 'edit']">
+        Edit
+      </a>
+    </div>
     <div class="post-img-wrap">
       <img src="https://s9.dziennik.pl/pliki/10197000/10197689-poznan-rynek-900-600.jpg" class="post-image" />
     </div>
@@ -11,6 +19,11 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+  <div class="related-posts">
+    <a
+      class="btn btn-warning"
+      [routerLink]="['/post', 22, 'An another article']">An another article</a>
   </div>
 </div>
 <app-home-footer></app-home-footer>

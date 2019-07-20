@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -19,6 +19,13 @@ export class PostComponent implements OnInit {
       id: this.route.snapshot.params['id'],
       title: this.route.snapshot.params['title']
     }
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.post.id = params['id'];
+          this.post.title = params['title'];
+        }
+      );
   }
 
 }
