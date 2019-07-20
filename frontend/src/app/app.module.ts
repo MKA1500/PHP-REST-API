@@ -14,6 +14,7 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { PostsListComponent } from './admin/posts-list/posts-list.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { HomeFooterComponent } from './home/home-footer/home-footer.component';
+import { PostComponent } from './home/post/post.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeFooterComponent } from './home/home-footer/home-footer.component';
     SidebarComponent,
     PostsListComponent,
     HomeHeaderComponent,
-    HomeFooterComponent
+    HomeFooterComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
