@@ -8,7 +8,7 @@ import { DataService } from '../../services/data.service';
 })
 export class PostsListComponent implements OnInit {
   response: any;
-  articles: any[];
+  posts: any[];
 
   constructor(private data: DataService) { }
 
@@ -17,8 +17,8 @@ export class PostsListComponent implements OnInit {
     let obs = this.data.getPosts();
     obs.subscribe((res) => {
       this.response = res;
-      this.articles = [...this.response.data];
-      console.log(this.articles);
+      this.posts = [...this.response.data];
+      console.log(this.posts);
     });
   }
 }

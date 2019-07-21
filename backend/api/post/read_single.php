@@ -20,6 +20,7 @@
     'title' => $post->title,
     'body' => $post->body,
     'image' => $post->image,
+    'lead' => $post->lead,
     'author' => $post->author,
     'category_name' => $post->category_name,
     'created_at' => $post->created_at,
