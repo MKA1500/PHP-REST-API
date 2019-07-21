@@ -57,7 +57,7 @@
         p.image,
         p.body,
         p.author,
-        p.created_at
+        p.created_at,
         p.published
       FROM
         ' . $this->table . ' p
@@ -76,7 +76,7 @@
       $this->title = $row['title'];
       $this->body = $row['body'];
       $this->author = $row['author'];
-      $this->category_id = $row['categort_id'];
+      // $this->category_id = $row['categort_id'];
       $this->category_name = $row['category_name'];
       $this->created_at = $row['created_at'];
       $this->published = $row['published'];

@@ -22,7 +22,7 @@
     'category_id' => $post->category_id,
     'category_name' => $post->category_name,
     'created_at' => $post->created_at,
-    'published' = $post->published;
+    'published' => $post->published
   );
 
   print_r(json_encode($post_arr));

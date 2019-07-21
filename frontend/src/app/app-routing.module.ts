@@ -8,7 +8,7 @@ import { EditPostComponent } from './admin/edit-post/edit-post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'post/:id/:title', component: PostComponent },
+  { path: 'post/:id/:title/:image', component: PostComponent },
   { path: 'edit-post/:id/edit', component: EditPostComponent },
   { path: 'admin', component: AdminComponent, children: [
   //   { path: 'admin', component: ArticlesListComponent },
