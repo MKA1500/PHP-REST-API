@@ -14,7 +14,7 @@ export class PostComponent implements OnInit {
   constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
+    this.id = +this.route.snapshot.params['id'];
     console.log('single post id', this.id);
 
     let obs = this.data.getSinglePost(this.id);

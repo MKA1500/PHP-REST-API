@@ -6,7 +6,7 @@
       <a
         class="btn btn-danger edit-post"
         href="#"
-        [routerLink]="['/edit-post', post.id, 'edit']"
+        [routerLink]="['/edit-post', +post.id, 'edit']"
         [queryParams]="{allowEdit: true}">
         Edit
       </a>

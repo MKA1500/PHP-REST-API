@@ -16,10 +16,11 @@
 
   $post_arr = array(
     'id' => $post->id,
+    'category_id' => $post->category_id,
     'title' => $post->title,
     'body' => $post->body,
+    'image' => $post->image,
     'author' => $post->author,
-    'category_id' => $post->category_id,
     'category_name' => $post->category_name,
     'created_at' => $post->created_at,
     'published' => $post->published

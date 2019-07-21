@@ -76,6 +76,8 @@
       $this->title = $row['title'];
       $this->body = $row['body'];
       $this->author = $row['author'];
+      $this->image = $row['image'];
+      $this->id = $row['id'];
       // $this->category_id = $row['categort_id'];
       $this->category_name = $row['category_name'];
       $this->created_at = $row['created_at'];
