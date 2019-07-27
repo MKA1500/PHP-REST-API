@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -11,7 +11,11 @@ export class PostComponent implements OnInit {
   id: number;
   post: any;
 
-  constructor(private route: ActivatedRoute, private data: DataService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private data: DataService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.id = +this.route.snapshot.params['id'];
@@ -22,13 +26,22 @@ export class PostComponent implements OnInit {
       this.post = res;
       console.log('single post response: ', this.post);
     });
-    //
-    // this.route.params
-    //   .subscribe(
-    //     (params: Params) => {
-    //       this.id = params['id'];
-    //     }
-    //   );
+
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = params['id'];
+        }
+      );
   }
+
+  onEdit() {
+    console.log('onEdit()');
+    this.router.navigate(['/admin', this.post.id, 'edit']);
+  }
+  /*
+  [routerLink]="['/admin', post.id, 'edit']"
+  [queryParams]="{allowEdit: true}"
+  */
 
 }

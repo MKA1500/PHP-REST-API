@@ -18,10 +18,10 @@
         <a
           class="btn btn-primary mr-1"
           href="#"
-          [routerLink]="['/admin', post.id, 'edit']"
-          [queryParams]="{allowEdit: true}">
+          [routerLink]="['/admin', post.id, 'edit']">
           Edit
         </a>
+        <!-- [queryParams]="{allowEdit: true}" -->
         <button
           *ngIf="post.published == 0"
           class="btn btn-success mr-1">Publish</button>
