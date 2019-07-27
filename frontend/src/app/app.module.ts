@@ -15,6 +15,7 @@ import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { HomeFooterComponent } from './home/home-footer/home-footer.component';
 import { PostComponent } from './home/post/post.component';
 import { EditPostComponent } from './admin/edit-post/edit-post.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditPostComponent } from './admin/edit-post/edit-post.component';
     HomeHeaderComponent,
     HomeFooterComponent,
     PostComponent,
-    EditPostComponent
+    EditPostComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
